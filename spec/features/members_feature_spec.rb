@@ -7,11 +7,11 @@ feature 'members' do
     Member.create(name: 'James Smith')
     Member.create(name: 'Ellen Jones')
     Member.create(name: 'Sam Walker')
+    visit '/members'
   end
 
-  context 'view all members plus their activities' do
-    scenario 'it should display a list of members and activities' do
-      visit '/members'
+  context 'view all members' do
+    scenario 'it should display a list of members' do
       expect(page).to have_link 'James Smith'
       expect(find('ul')).to have_selector('li', count: 3)
     end
@@ -19,7 +19,6 @@ feature 'members' do
 
   context 'view an individual member page' do
     scenario 'it should display the member profile page' do
-      visit '/members'
       click_link 'James Smith'
       expect(page).to have_content("James Smith - Profile Page")
     end
@@ -27,7 +26,6 @@ feature 'members' do
 
   context 'add a new activity' do
     scenario 'allows users to add an activity on their page' do
-       visit '/members'
        click_link 'James Smith'
        click_link 'Add activity'
        fill_in 'Description', with: 'Running'
@@ -35,4 +33,6 @@ feature 'members' do
        expect(page).to have_content('Running')
     end
   end
+
+
 end
