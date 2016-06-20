@@ -6,8 +6,8 @@ A Ruby on Rails app for gym members & sports activities.
 To clone this repo, install dependencies, and set up the database:
 ```
 $ git clone https://github.com/vickymg/activities_app.git
-$ bundle
 $ cd activities_app
+$ bundle
 $ bin/rake db:create
 $ bin/rake db:create RAILS_ENV=test
 ```
