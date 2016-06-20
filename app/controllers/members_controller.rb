@@ -19,4 +19,8 @@ class MembersController < ApplicationController
   def member_params
     params.require(:member).permit(:name)
   end
+
+  def show
+    @member = Member.find(params[:id])
+  end
 end

@@ -1,6 +1,6 @@
 <% if @members.any? %>
   <% @members.each do |member| %>
-    <p> <%= member.name %> </p>
+    <%= link_to member.name, member_path(member) %>
   <% end %>
 <% else %>
   No members have been added yet.
