@@ -1,7 +1,9 @@
 <% if @members.any? %>
-  <% @members.each do |member| %>
-    <%= link_to member.name, member_path(member) %>
-  <% end %>
+  <ul>
+    <% @members.each do |member| %>
+      <li><%= link_to member.name, member_path(member) %></li>
+    <% end %>
+  </ul>
 <% else %>
   No members have been added yet.
 <% end %>

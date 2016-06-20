@@ -1,1 +1,15 @@
 <p><%= @member.name %> - Profile Page</p>
+
+Activities:
+<% if @member.activities.any? %>
+  <ul>
+    <% @member.activities.each do |activity| %>
+      <li><%= activity.description %></li>
+    <% end %>
+  </ul>
+<% else %>
+  No activities have been added yet.
+<% end %>
+
+
+<%= link_to 'Add activity', new_member_activity_path(@member) %>
