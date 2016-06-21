@@ -26,6 +26,7 @@ To run the app:
 $ bin/rails s
 ```
 Visit the page at: http://localhost:3000
+
 To use the admin section: http://localhost:3000/admin
 
 User Stories (admin):
