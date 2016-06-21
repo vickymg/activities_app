@@ -2,9 +2,6 @@
   <ul>
     <% @members.each do |member| %>
       <li><%= link_to member.name, member_path(member) %></li>
-      <% member.activities.each do |activity| %>
-      <%= activity.description %>
-      <% end %>
     <% end %>
   </ul>
 <% else %>
