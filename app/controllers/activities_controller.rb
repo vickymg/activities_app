@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
 
   def new
+    @activities = Activity.all
     @member = Member.find(params[:member_id])
     @activity = Activity.new
   end

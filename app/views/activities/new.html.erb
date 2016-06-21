@@ -1,5 +1,5 @@
 <%= form_for [@member, @activity] do |f| %>
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.collection_select :description, @activities, :description, :description %>
   <%= f.submit 'Add activity' %>
 <% end %>
