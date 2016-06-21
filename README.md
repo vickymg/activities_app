@@ -8,14 +8,25 @@ To clone this repo, install dependencies, and set up the database:
 $ git clone https://github.com/vickymg/activities_app.git
 $ cd activities_app
 $ bundle
-$ bin/rake db:create
-$ bin/rake db:create RAILS_ENV=test
 ```
+To set up the Postgres database:
+```
+$ bin/rake db:create
+$ bin/rake db:migrate
+$ bin/rake db:seed
+
+```
+To run tests:
+```
+$ rpsec
+```
+
 To run the app:
 ```
 $ bin/rails s
 ```
 Visit the page at: http://localhost:3000
+To use the admin section: http://localhost:3000/admin
 
 User Stories (admin):
 ```

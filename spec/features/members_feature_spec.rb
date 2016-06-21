@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 feature 'members' do
 
   before do
