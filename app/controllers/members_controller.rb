@@ -1,4 +1,7 @@
 class MembersController < ApplicationController
+
+  helper_method :get_member_activities
+
   def index
     @members = Member.all
   end
@@ -22,10 +25,16 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+  end
+
+  def get_member_activities(id)
+    @member = Member.find(id)
     @member_activities = []
     @member.activities.each do |activity|
       @member_activities << activity.name
     end
     @member_activities.uniq!
+    @member_activities.to_sentence
   end
+
 end

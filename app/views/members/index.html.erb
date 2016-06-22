@@ -2,6 +2,9 @@
   <ul>
     <% @members.each do |member| %>
       <li><%= link_to member.name, member_path(member) %></li>
+      <% if member.activities.any? %>
+        <li><%= get_member_activities(member.id) %></li>
+      <% end %>
     <% end %>
   </ul>
 <% else %>

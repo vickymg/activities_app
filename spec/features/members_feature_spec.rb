@@ -24,12 +24,23 @@ feature 'members' do
   end
 
   context 'add a new activity' do
+
+    before do
+      click_link 'James Smith'
+      click_link 'Add activity'
+      select 'Running', :from => 'activity_name'
+      fill_in :activity_description, with: 'Ran 26 miles'
+      click_button 'Add activity'
+    end
+
     scenario 'allows users to add an activity on their page' do
-       click_link 'James Smith'
-       click_link 'Add activity'
-       select "Running", :from => "activity_name"
-       click_button 'Add activity'
        expect(page).to have_content('Running')
+       expect(page).to have_content('Ran 26 miles')
+    end
+
+    scenario 'type of activity added appears on main members page' do
+      click_link 'Back to members'
+      expect(page).to have_content('Running')
     end
   end
 
