@@ -1,4 +1,4 @@
 class Activity < ActiveRecord::Base
+  belongs_to :member
   has_many :memberships
-  has_many :members, through: :memberships
 end

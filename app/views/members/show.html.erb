@@ -2,7 +2,7 @@
 
 Activities:
 <% if @member.activities.any? %>
-  <ul>
+<%= @member_activities.to_sentence %>
     <% @member.activities.each do |activity| %>
       <li><%= activity.description %></li>
     <% end %>

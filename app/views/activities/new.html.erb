@@ -1,5 +1,7 @@
 <%= form_for [@member, @activity] do |f| %>
+  <%= f.label :name %>
+  <%= f.select :name, options_for_select([['Running'], ['Cycling'], ['Walking'],['Kayaking'], ['Swimming']], :selected => :running) %>
   <%= f.label :description %>
-  <%= f.collection_select :description, @activities, :description, :description %>
+  <%= f.text_area :description %>
   <%= f.submit 'Add activity' %>
 <% end %>

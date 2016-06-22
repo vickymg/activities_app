@@ -22,5 +22,10 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    @member_activities = []
+    @member.activities.each do |activity|
+      @member_activities << activity.name
+    end
+    @member_activities.uniq!
   end
 end

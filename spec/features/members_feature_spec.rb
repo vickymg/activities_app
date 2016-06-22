@@ -27,7 +27,7 @@ feature 'members' do
     scenario 'allows users to add an activity on their page' do
        click_link 'James Smith'
        click_link 'Add activity'
-       select "Running", :from => "activity_description"
+       select "Running", :from => "activity_name"
        click_button 'Add activity'
        expect(page).to have_content('Running')
     end
