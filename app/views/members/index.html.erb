@@ -1,12 +1,14 @@
-<% if @members.any? %>
-  <ul>
-    <% @members.each do |member| %>
-      <li><%= link_to member.name, member_path(member) %></li>
-      <% if member.activities.any? %>
-        <li><%= get_member_activities(member.id) %></li>
+<div class='container-fluid bg-3'>
+  <% if @members.any? %>
+    <ul>
+      <% @members.each do |member| %>
+        <li><%= link_to member.name, member_path(member) %></li>
+        <% if member.activities.any? %>
+          <li class="arrow"> <%= get_member_activities(member.id) %></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-<% else %>
-  No members have been added yet.
-<% end %>
+    </ul>
+  <% else %>
+    No members have been added yet.
+  <% end %>
+</div>

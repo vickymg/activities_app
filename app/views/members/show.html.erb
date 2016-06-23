@@ -1,15 +1,17 @@
-<p><%= @member.name %> - Profile Page</p>
-
-Activities:
-<% if @member.activities.any? %>
-<%= get_member_activities(@member.id) %>
+<div class="container-fluid bg-1">
+  <h3><%= @member.name %></h3>
+  Activities:
+  <% if @member.activities.any? %>
+    <%= get_member_activities(@member.id) %>
+    <br></br>
     <% @member.activities.each do |activity| %>
-      <li><%= activity.description %></li>
-    <% end %>
+    <li class="arrow"><%= activity.description %></li>
+  <% end %>
   </ul>
-<% else %>
+  <% else %>
   No activities have been added yet.
-<% end %>
-
-<%= link_to 'Add activity', new_member_activity_path(@member) %>
-<%= link_to 'Back to members', members_path %>
+  <% end %>
+<br></br>
+  <%= link_to 'Add activity', new_member_activity_path(@member) %> /
+  <%= link_to 'Back to all members', members_path %>
+</div>

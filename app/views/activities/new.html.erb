@@ -1,7 +1,10 @@
-<%= form_for [@member, @activity] do |f| %>
+<div class="container-fluid bg-2 text-center">
+  <h3>Add an activity...</h3>
+  <%= form_for [@member, @activity] do |f| %>
   <%= f.label :name %>
   <%= f.select :name, options_for_select([['Running'], ['Cycling'], ['Walking'],['Kayaking'], ['Swimming']], :selected => :running) %>
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_field :description %>
   <%= f.submit 'Add activity' %>
-<% end %>
+  <% end %>
+</div>
